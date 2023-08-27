@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="358.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <!-- Estilo de fundo para a tela de abertura -->
+    <style>
+        .bg {
+            -fx-background-color:  #1F3247;-fx-background-color: #1F3247;</style>
+
+    <!-- Texto para a tela de abertura -->
+    <Text fx:id="textoBemVindo" layoutX="75.0" layoutY="188.0" style="-fx-font-size: 24; -fx-font-weight: bold;" text="Bem-vindo ao sistema de vendas">
+      <fill>
+         <LinearGradient endX="0.4976303317535545" endY="0.004739336492890961" startY="0.9241706161137441">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color red="0.4736842215061188" green="0.4736842215061188" blue="0.4736842215061188" />
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="1.0" green="1.0" blue="1.0" />
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </fill></Text>
+   <Line endX="364.0" layoutX="124.0" layoutY="335.0" startX="-100.0" fx:id="linha1">
+      <stroke>
+         <LinearGradient endX="1.0" endY="1.0">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color red="0.4736842215061188" green="0.4736842215061188" blue="0.4736842215061188" />
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="1.0" green="1.0" blue="1.0" />
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </stroke>
+   </Line>
+   <Line endX="364.0" layoutX="124.0" layoutY="23.0" startX="-100.0" fx:id="linha2">
+      <stroke>
+         <LinearGradient endX="1.0" endY="1.0">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color red="0.4736842215061188" green="0.4736842215061188" blue="0.4736842215061188" />
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="1.0" green="1.0" blue="1.0" />
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </stroke>
+   </Line>
+</AnchorPane>

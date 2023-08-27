@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="566.0" prefWidth="400.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.mafort.sistema.controller.VendedorController">
+
+	<children>
+
+
+		<AnchorPane layoutX="178.0" prefHeight="566.0" prefWidth="721.0" style="-fx-background-color: #ECF8F9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<children>
+            <Pane fx:id="paneEditar" prefHeight="566.0" prefWidth="543.0" style="-fx-background-color: #F7FFF7;">
+               <children>
+                  <Text fill="#485968" layoutX="188.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editar vendedor" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="25.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="65.0" layoutY="151.0" text="Digite o CPF:" />
+                  <Label layoutX="64.0" layoutY="102.0" text="Digite o nome do fornecedor:" />
+                  <ComboBox fx:id="cmbUfEditar" disable="true" layoutX="150.0" layoutY="344.0" onAction="#carregaUfEditar" onKeyReleased="#habilitabtn" onTouchReleased="#carregaCidade" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: #DCE6E1;" />
+                  <TextField fx:id="txfNomeEditar" disable="true" layoutX="243.0" layoutY="98.0" onKeyReleased="#habilitabtn" prefHeight="26.0" prefWidth="192.0" promptText="nome completo" style="-fx-background-color: #DCE6E1;" />
+                  <Button fx:id="btnEditar" disable="true" layoutX="18.0" layoutY="489.0" mnemonicParsing="false" onAction="#atualizaVendedor" onMouseEntered="#habilitabtn" prefHeight="32.0" prefWidth="506.0" style="-fx-background-color: #1F3247; -fx-text-fill: #F7FFF7; -fx-background-radius: 3px;" text="Editar vendedor" />
+                  <TextField fx:id="txfCPFEditar" disable="true" layoutX="160.0" layoutY="147.0" onKeyReleased="#habilitabtn" prefHeight="26.0" prefWidth="192.0" promptText="Ex.: XXX.XXX.XXX-XX" style="-fx-background-color: #DCE6E1;" />
+                  <Label layoutX="65.0" layoutY="247.0" text="Digite o Bairro:" />
+                  <TextField fx:id="txfBairroEditar" disable="true" layoutX="161.0" layoutY="243.0" onKeyReleased="#habilitabtn" prefHeight="26.0" prefWidth="319.0" promptText="Bairro do endereço do fornecedor" style="-fx-background-color: #DCE6E1;" />
+                  <Label layoutX="64.0" layoutY="297.0" text="Digite o número:" />
+                  <TextField fx:id="txfnumeroEditar" disable="true" layoutX="165.0" layoutY="293.0" onKeyReleased="#habilitabtn" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: #DCE6E1;" />
+                  <Label layoutX="64.0" layoutY="348.0" text="Escolha a UF:" />
+                  <Label layoutX="64.0" layoutY="399.0" text="Escolha o município:" />
+                  <ComboBox fx:id="cmbCidadeEditar" disable="true" layoutX="194.0" layoutY="395.0" onAction="#carregaCidadeEditar" onKeyReleased="#habilitabtn" onMouseClicked="#carregaCidade" prefHeight="26.0" prefWidth="245.0" style="-fx-background-color: #DCE6E1;" />
+                  <Label layoutX="65.0" layoutY="198.0" text="Digite a rua:" />
+                  <TextField fx:id="txfRuaEditar" disable="true" layoutX="144.0" layoutY="194.0" onKeyReleased="#habilitabtn" prefHeight="26.0" prefWidth="319.0" promptText="Rua do endereço do fornecedor" style="-fx-background-color: #DCE6E1;" />
+                  <Label layoutX="64.0" layoutY="448.0" text="Digite a comissao percentual:" />
+                  <TextField fx:id="txfComissaoEditar" disable="true" layoutX="232.0" layoutY="444.0" onKeyReleased="#habilitabtn" prefHeight="26.0" prefWidth="245.0" style="-fx-background-color: #DCE6E1;" />
+                  <Button fx:id="btnIrParaInserir" layoutX="18.0" layoutY="527.0" mnemonicParsing="false" onAction="#ativaInserir" prefHeight="25.0" prefWidth="506.0" style="-fx-background-color: #485968; -fx-text-fill: #F7FFF7; -fx-background-radius: 3px;" text="Ir para a página inserir vendedor">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label layoutX="64.0" layoutY="56.0" text="Selecione um vendedor:" />
+                  <ComboBox fx:id="cmbVendedor" editable="true" layoutX="211.0" layoutY="52.0" onAction="#preencheDadosVendedor" prefHeight="25.0" prefWidth="256.0" style="-fx-background-color: #DCE6E1;" />
+               </children>
+            </Pane>
+
+				<Pane fx:id="paneVendedor" prefHeight="566.0" prefWidth="543.0" style="-fx-background-color: #F7FFF7;">
+					<children>
+						<Text fill="#485968" layoutX="157.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserir novo vendedor" textAlignment="CENTER">
+							<font>
+								<Font name="Calibri Bold" size="25.0" />
+							</font>
+						</Text>
+						<Label layoutX="40.0" layoutY="127.0" text="Digite o CPF:" />
+						<Label layoutX="39.0" layoutY="78.0" text="Digite o nome do vendedor:" />
+						<ComboBox fx:id="cmbUf" layoutX="125.0" layoutY="328.0" onKeyReleased="#habilitabtn" onTouchReleased="#carregaCidade" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: #DCE6E1;" />
+						<TextField fx:id="txfNome" layoutX="207.0" layoutY="74.0" onKeyReleased="#habilitabtn" prefHeight="26.0" prefWidth="192.0" promptText="Nome completo" style="-fx-background-color: #DCE6E1;" />
+						<Button fx:id="btnInserir" disable="true" layoutX="19.0" layoutY="481.0" mnemonicParsing="false" onAction="#insereVendedor" onMouseEntered="#habilitabtn" prefHeight="32.0" prefWidth="506.0" style="-fx-background-color: #1F3247; -fx-text-fill: #F7FFF7; -fx-background-radius: 3px;" text="Inserir vendedor">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+						<TextField fx:id="txfCPF" layoutX="135.0" layoutY="123.0" onKeyReleased="#habilitabtn" prefHeight="26.0" prefWidth="192.0" promptText="Ex.: XXX.XXX.XXX-XX" style="-fx-background-color: #DCE6E1;" />
+						<Label layoutX="39.0" layoutY="228.0" text="Digite o Bairro:" />
+						<TextField fx:id="txfBairro" layoutX="135.0" layoutY="224.0" onKeyReleased="#habilitabtn" prefHeight="26.0" prefWidth="319.0" promptText="Bairro do endereço do vendedor" style="-fx-background-color: #DCE6E1;" />
+						<Label layoutX="39.0" layoutY="281.0" text="Digite o número:" />
+						<TextField fx:id="txfnumero" layoutX="143.0" layoutY="277.0" onKeyReleased="#habilitabtn" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: #DCE6E1;" />
+						<Label layoutX="39.0" layoutY="332.0" text="Escolha a UF:" />
+						<Label layoutX="39.0" layoutY="383.0" text="Escolha o município:" />
+						<ComboBox fx:id="cmbCidade" layoutX="169.0" layoutY="379.0" onKeyReleased="#habilitabtn" onMouseClicked="#carregaCidade" prefHeight="26.0" prefWidth="245.0" style="-fx-background-color: #DCE6E1;" />
+                  <Label layoutX="39.0" layoutY="179.0" text="Digite a rua:" />
+                  <TextField fx:id="txfRua" layoutX="118.0" layoutY="175.0" onKeyReleased="#habilitabtn" prefHeight="26.0" prefWidth="319.0" promptText="Rua do endereço do vendedor" style="-fx-background-color: #DCE6E1;" />
+                  <Label layoutX="39.0" layoutY="432.0" text="Digite a comissao percentual:" />
+                  <TextField fx:id="txfComissao" layoutX="207.0" layoutY="428.0" onKeyReleased="#habilitabtn" prefHeight="26.0" prefWidth="245.0" style="-fx-background-color: #DCE6E1;" />
+                  <Button fx:id="btnIrParaEditar" layoutX="19.0" layoutY="521.0" mnemonicParsing="false" onAction="#ativaEditar" prefHeight="25.0" prefWidth="506.0" style="-fx-background-color: #485968; -fx-text-fill: #F7FFF7; -fx-background-radius: 3px;" text="Ir para a página editar vendedor">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+					</children>
+				</Pane>
+			</children>
+		</AnchorPane>
+	</children>
+</AnchorPane>

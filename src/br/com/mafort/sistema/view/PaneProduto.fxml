@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="566.0" prefWidth="400.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.mafort.sistema.controller.ProdutoController">
+
+	<children>
+				<Pane fx:id="paneExcluirEditarProduto" prefHeight="566.0" prefWidth="543.0" style="-fx-background-color: #F7FFF7;">
+   <children>
+      <Text fill="#485968" layoutX="195.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editar produto" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="25.0" />
+         </font>
+      </Text>
+      <Label layoutX="43.0" layoutY="140.0" text="Edite o nome do produto:" />
+      <Label layoutX="43.0" layoutY="180.0" text="Edite o fornecedor:" />
+      <ComboBox fx:id="cmbFornecedorParaEditar" disable="true" editable="true" layoutX="159.0" layoutY="176.0" prefHeight="25.0" prefWidth="256.0" style="-fx-background-color: #DCE6E1;" onMouseEntered="#carregaFornecedoresParaEditar"/>
+      <ComboBox fx:id="cmbProdutosParaEditar" editable="true" layoutX="159.0" layoutY="100.0" onAction="#preencheDadosProdutoSelecionado" prefHeight="25.0" prefWidth="256.0" style="-fx-background-color: #DCE6E1;" onMouseEntered="#carregaProdutosParaEditar"/>
+      <Label layoutX="43.0" layoutY="104.0" text="Escolha o produto:" />
+      <Button fx:id="btnEditarProduto" layoutX="19.0" layoutY="259.0" mnemonicParsing="false" onAction="#editarProduto" prefHeight="32.0" prefWidth="506.0" style="-fx-background-color: #1F3247; -fx-text-fill: #F7FFF7; -fx-background-radius: 3px;" text="Editar produto">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+      <TextField fx:id="tfxNomeParaEditar" disable="true" layoutX="197.0" layoutY="136.0" prefHeight="25.0" prefWidth="256.0" style="-fx-background-color: #DCE6E1;" />
+      <Label layoutX="43.0" layoutY="218.0" text="Altere o valor:" />
+      <TextField fx:id="tfxValorParaEditar" disable="true" layoutX="129.0" layoutY="214.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #DCE6E1;" />
+      <Button fx:id="btnExcluirProduto" layoutX="19.0" layoutY="393.0" mnemonicParsing="false" onAction="#excluirProduto" prefHeight="32.0" prefWidth="506.0" style="-fx-background-color: #1F3247; -fx-text-fill: #F7FFF7; -fx-background-radius: 3px;" text="Excluir produto">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+      <Label fx:id="lblLimpaCamposEditar" layoutX="163.0" layoutY="438.0" onMouseClicked="#limpaCamposEditarProdutos" text="Clique aqui para limpar todos os campos" textFill="#485968">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Text fill="#485968" layoutX="190.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Excluir produto" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="25.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbProdutosParaExcluir" editable="true" layoutX="163.0" layoutY="353.0" onMouseExited="#habilitaBtnExcluir" prefHeight="25.0" prefWidth="256.0" style="-fx-background-color: #DCE6E1;" onMouseEntered="#carregaProdutosParaExcluir"/>
+      <Label layoutX="43.0" layoutY="357.0" text="Escolha o produto:" />
+      <Button fx:id="btnIrParaInserirProduto" layoutX="18.0" layoutY="521.0" mnemonicParsing="false" onAction="#ativaInserir" onMouseEntered="#habilitabtnInserirProdutoExistente" prefHeight="25.0" prefWidth="506.0" style="-fx-background-color: #485968; -fx-text-fill: #F7FFF7; -fx-background-radius: 3px;" text="Ir para inserir produto">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+   </children>
+</Pane>
+
+                  		<Pane fx:id="paneProduto" prefHeight="566.0" prefWidth="543.0" style="-fx-background-color: #F7FFF7;;">
+					<children>
+						<Text fill="#485968" layoutX="166.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserir novo produto" textAlignment="CENTER">
+							<font>
+								<Font name="Calibri Bold" size="25.0" />
+							</font>
+						</Text>
+						<Label layoutX="41.0" layoutY="74.0" text="Digite o nome do produto:" />
+						<Label layoutX="41.0" layoutY="114.0" text="Selecione um fornecedor:" />
+						<Label layoutX="41.0" layoutY="152.0" text="Digite a quantidade:" />
+						<ComboBox fx:id="cmbFornecedor" editable="true" layoutX="197.0" layoutY="110.0" onMouseExited="#habilitabtnInserirProdutoNovo" prefHeight="25.0" prefWidth="256.0" style="-fx-background-color: #DCE6E1;" onMouseEntered="#carregaFornecedores"/>
+						<ComboBox fx:id="cmbProdutos" editable="true" layoutX="161.0" layoutY="318.0" onMouseExited="#habilitabtnInserirProdutoExistente" prefHeight="25.0" prefWidth="256.0" style="-fx-background-color: #DCE6E1;" onMouseEntered="#carregaProdutos"/>
+						<TextField fx:id="txfQuantidade2" layoutX="168.0" layoutY="361.0" onKeyReleased="#habilitabtnInserirProdutoExistente" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #DCE6E1;" />
+						<Label layoutX="41.0" layoutY="322.0" text="Escolha o produto:" />
+						<Label layoutX="41.0" layoutY="365.0" text="Digite a quantidade:" />
+						<Text fill="#485968" layoutX="145.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserir produto existente" textAlignment="CENTER">
+							<font>
+								<Font name="Calibri Bold" size="25.0" />
+							</font>
+						</Text>
+						<TextField fx:id="txfQuantidade" layoutX="168.0" layoutY="148.0" onKeyReleased="#habilitabtnInserirProdutoNovo" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #DCE6E1;" />
+						<Button fx:id="btnInserir" disable="true" layoutX="21.0" layoutY="230.0" mnemonicParsing="false" onAction="#insereProduto" onInputMethodTextChanged="#habilitabtnInserirProdutoNovo" onMouseEntered="#habilitabtnInserirProdutoNovo" prefHeight="32.0" prefWidth="506.0" style="-fx-background-color: #1F3247; -fx-text-fill: #F7FFF7; -fx-background-radius: 3px;" text="Inserir produto">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TextField fx:id="txfNome" layoutX="201.0" layoutY="70.0" onKeyReleased="#habilitabtnInserirProdutoNovo" prefHeight="25.0" prefWidth="256.0" style="-fx-background-color: #DCE6E1;" />
+            <Label layoutX="41.0" layoutY="191.0" text="Digite o valor unitário/kg :" />
+            <TextField fx:id="txfValorProdutoNovo" layoutX="195.0" layoutY="187.0" onKeyReleased="#habilitabtnInserirProdutoNovo" prefHeight="25.0" prefWidth="149.0" promptText="Ex: 00.00" style="-fx-background-color: #DCE6E1;" />
+            <Label layoutX="41.0" layoutY="407.0" text="Digite o valor unitário/kg:" />
+            <TextField fx:id="txfValorProdutoExistente" layoutX="195.0" layoutY="403.0" onKeyReleased="#habilitabtnInserirProdutoExistente" prefHeight="25.0" prefWidth="149.0" promptText="Ex: 00.00" style="-fx-background-color: #DCE6E1;" />
+            <Button fx:id="btnInserirProdutoExistente" disable="true" layoutX="17.0" layoutY="475.0" mnemonicParsing="false" onAction="#insereProdutoExistente" onMouseEntered="#habilitabtnInserirProdutoExistente" prefHeight="32.0" prefWidth="506.0" style="-fx-background-color: #1F3247; -fx-text-fill: #F7FFF7; -fx-background-radius: 3px;" text=" Inserir produto existente">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="lblLimpaCampos" layoutX="165.0" layoutY="445.0" onMouseClicked="#limpaCampos" text="Clique aqui para limpar todos os campos" textFill="#485968">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Button fx:id="btnEditarExcluirProduto" layoutX="17.0" layoutY="516.0" mnemonicParsing="false" onAction="#ativaEditar" onMouseEntered="#habilitabtnInserirProdutoExistente" prefHeight="25.0" prefWidth="506.0" style="-fx-background-color: #485968; -fx-text-fill: #F7FFF7; -fx-background-radius: 3px;" text="Excluir ou editar um produto">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+					</children>
+				</Pane>
+	</children>
+</AnchorPane>

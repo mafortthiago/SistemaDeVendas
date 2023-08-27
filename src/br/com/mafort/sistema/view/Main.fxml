@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.mafort.sistema.controller.MainController">
+
+	<children>
+		<AnchorPane layoutX="-19.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="566.0" prefWidth="212.0" style="-fx-background-color: #1F3247;">
+			<children>
+				<Button fx:id="btnInserirVenda" layoutX="14.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="186.0" style="-fx-background-radius: 0; -fx-background-color: #1F3247;" styleClass="abc" stylesheets="@../application/application.css" text="Venda" textFill="WHITE" textOverrun="CLIP">
+					<cursor>
+						<Cursor fx:constant="HAND" />
+					</cursor>
+				</Button>
+				<Button fx:id="btnInserirVendedor" layoutX="14.0" layoutY="194.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="186.0" style="-fx-background-radius: 0; -fx-background-color: #1F3247;" text="Vendedor" textFill="WHITE" textOverrun="CLIP">
+					<cursor>
+						<Cursor fx:constant="HAND" />
+					</cursor>
+				</Button>
+				<Button fx:id="btnInserirProduto" layoutX="14.0" layoutY="258.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="186.0" style="-fx-background-radius: 0; -fx-background-color: #1F3247;" text="Produto" textFill="WHITE" textOverrun="CLIP">
+					<cursor>
+						<Cursor fx:constant="HAND" />
+					</cursor>
+				</Button>
+				<Button fx:id="btnInserirFornecedor" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="186.0" style="-fx-background-radius: 0; -fx-background-color: #1F3247;" text="Fornecedor" textFill="WHITE" textOverrun="CLIP">
+					<cursor>
+						<Cursor fx:constant="HAND" />
+					</cursor>
+				</Button>
+            <Button fx:id="btnRelatorios" layoutX="14.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="186.0" style="-fx-background-radius: 0; -fx-background-color: #1F3247;" text="Relatórios" textFill="WHITE" textOverrun="CLIP">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+			</children>
+		</AnchorPane>
+		<AnchorPane layoutX="178.0" prefHeight="471.0" prefWidth="525.0" style="-fx-background-color: #ECF8F9;">
+			<children>
+				<fx:include fx:id="acpVendedor" source="PaneVendedor.fxml" />
+				<fx:include fx:id="acpProduto" source="PaneProduto.fxml" />
+				<fx:include fx:id="acpFornecedor" source="paneFornecedor.fxml" />
+				<fx:include fx:id="acpRelatorio" source="PaneRelatorio.fxml" />
+				<fx:include fx:id="acpVenda" source="PaneVenda.fxml" />
+			</children>
+		</AnchorPane>
+	</children>
+</AnchorPane>
